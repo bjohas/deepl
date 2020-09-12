@@ -26,6 +26,7 @@ parser.add_argument('--fr', { help: "Translate to informal French.", action: 'st
 parser.add_argument('--pt', { help: "Translate to informal Portuguese.", action: 'store_true' });
 parser.add_argument('--br', { help: "Translate to informal Brazilian.", action: 'store_true' });
 parser.add_argument('-u','--usage', { help: "Get usage.", action: 'store_true' });
+parser.add_argument('-n','--nocopytoclipboard', { help: "Do not copy result to clipboard.", action: 'store_true' });
 var arg = parser.parse_args();
 
 if (arg["de"]) {
@@ -50,7 +51,7 @@ if (arg["br"]) {
 
 if (!arg["text"] && !arg["usage"]) {
   console.log("TEXT is required");
-  process.exit(1)
+  process.exit(1);
 } else {
   // console.log("TARGET "+arg["target"]);    
 };
@@ -105,7 +106,10 @@ async function translateTextDeepL(txt,from,to,formality) {
   if (!arg["usage"]) {
     const text = await translateTextDeepL(arg["text"],arg["source"],arg["target"],arg["formality"]);
     console.log(text);
-    clipboardy.writeSync(text);
+    if (arg["nocopytoclipboard"]) {
+    } else {
+      clipboardy.writeSync(text);
+    };
   } else {
     const text = await getDeepLUsage();
     console.log(text);
