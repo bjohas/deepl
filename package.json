@@ -1,0 +1,29 @@
+{
+  "name": "deepl",
+  "version": "1.0.0",
+  "description": "",
+  "main": "deepl.js",
+  "dependencies": {
+    "argparse": "^2.0.1",
+    "axios": "^0.20.0",
+    "child_process": "^1.0.2",
+    "clipboardy": "^2.3.0",
+    "copy-to-clipboard": "^3.3.1",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjohas/deepl.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bjohas/deepl/issues"
+  },
+  "homepage": "https://github.com/bjohas/deepl#readme"
+}
