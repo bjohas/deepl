@@ -33,8 +33,8 @@ if (arg["de"]) {
   arg["formality"] = "less";
 };
 
-if (arg["br"]) {
-  arg["target"] = "PT-BR";
+if (arg["fr"]) {
+  arg["target"] = "FR";
   arg["formality"] = "less";
 };
 
@@ -43,8 +43,8 @@ if (arg["pt"]) {
   arg["formality"] = "less";
 };
 
-if (arg["fr"]) {
-  arg["target"] = "FR";
+if (arg["br"]) {
+  arg["target"] = "PT-BR";
   arg["formality"] = "less";
 };
 
@@ -55,7 +55,6 @@ if (!arg["text"] && !arg["usage"]) {
   // console.log("TARGET "+arg["target"]);    
 };
 
-
 if (!arg["target"] && !arg["usage"]) {
   console.log("--target TARGET is required");
   process.exit(1)
@@ -63,10 +62,11 @@ if (!arg["target"] && !arg["usage"]) {
   // console.log("TARGET "+arg["target"]);    
 };
 
-
+/*
 function getDeepLURL(txt,from,to) {
   return "https://www.deepl.com/translator#"+from+"/" + to + "/" + encodeURIComponent(txt);
 };
+*/
 
 async function getDeepLUsage() {
   var url = "https://api.deepl.com/v2/usage?auth_key="+apikey
