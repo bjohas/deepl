@@ -134,7 +134,7 @@ async function translateTextDeepL(txt,from,to,formality) {
       };
       text = arg["source"]+": "+arg["text"]+"\n"+arg["target"]+": "+text;
       // arg["text"] = arg["text"].slice(0, -1);
-      textcb = textcb+" [\""+arg["text"]+"\"]";
+      textcb = textcb+" [[\""+arg["text"]+"\"]]";
     };
     console.log(text);
     if (arg["nocopytoclipboard"]) {
